@@ -1,22 +1,21 @@
 /* global $ */
 $(document).ready(function() {
-    
-    // On Page Load
     $.getJSON("/api/todos")
     .done(addTodos)
     .fail(printData);
 
-    // Event Listeners
     $("#todoInput").keypress(function(event) {
         if(event.which === 13) {
             createTodo();
         }
     });
+    
     $(".list").on("click", "li", updateTodo);
+    
     $(".list").on("click", "span", deleteTodo);
 });
 
-// Declared Fuctions
+
 function addTodos(todos) {
     console.log(todos);
     todos.forEach(appendTodo);
@@ -37,15 +36,15 @@ function createTodo() {
 }
 
 function appendTodo(todo) {
-        var newTodo = $("<li>" + todo.name + "<span>x</span></li>");
-        newTodo.data("id", todo._id);
-        newTodo.data("completed", todo.completed);
-        newTodo.addClass("task");
-        if(todo.completed) {
-            newTodo.addClass("done");
-        }
-        $(".list").append(newTodo);
+    var newTodo = $("<li>" + todo.name + "<span>x</span></li>");
+    newTodo.data("id", todo._id);
+    newTodo.data("completed", todo.completed);
+    newTodo.addClass("task");
+    if(todo.completed) {
+        newTodo.addClass("done");
     }
+    $(".list").append(newTodo);
+}
     
 function deleteTodo(event) {
     event.stopPropagation();
