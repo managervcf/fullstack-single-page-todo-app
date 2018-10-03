@@ -1,10 +1,10 @@
 /* global $ */
-$(document).ready(function() {
+$(document).ready(() => {
     $.getJSON("/api/todos")
     .done(addTodos)
     .fail(printData);
 
-    $("#todoInput").keypress(function(event) {
+    $("#todoInput").keypress((event) => {
         if(event.which === 13) {
             createTodo();
         }
@@ -28,7 +28,7 @@ function printData(data) {
 function createTodo() {
     var userInput = $("#todoInput").val();
     $.post("/api/todos", {name: userInput})
-    .done(function(newTodo) {
+    .done((newTodo) => {
         $("#todoInput").val("");
         appendTodo(newTodo);
     })
@@ -54,9 +54,7 @@ function deleteTodo(event) {
         method: "DELETE",
         url: deleteUrl
     })
-    .done(function() {
-        that.remove();
-    })
+    .done(() => that.remove())
     .fail(printData);
 }
 
