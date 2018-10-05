@@ -32,7 +32,7 @@ header h2 {
 /*****************************FORM STYLES*****************************/
 
 .form {
-	width: 800px;
+	width: 600px;
 	margin: 50px auto 20px;
 }
 
@@ -57,7 +57,7 @@ header h2 {
 /*****************************LIST STYLES*****************************/
 
 .list {
-	width: 800px;
+	width: 600px;
 	margin: 0 auto;
 }
 .task {

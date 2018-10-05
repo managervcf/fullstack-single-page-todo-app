@@ -36,7 +36,7 @@ function createTodo() {
 }
 
 function appendTodo(todo) {
-    var newTodo = $("<li>" + todo.name + "<span>x</span></li>");
+    var newTodo = $(`<li>${todo.name}<span><i class="far fa-trash-alt"></i></span></li>`);
     newTodo.data("id", todo._id);
     newTodo.data("completed", todo.completed);
     newTodo.addClass("task");
