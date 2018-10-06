@@ -1,8 +1,11 @@
-var mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-mongoose.set("debug", true);
-mongoose.connect("mongodb://localhost/todo-api", {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/todo-api', {useNewUrlParser: true});
+
+mongoose.set('debug', true);
+
 mongoose.Promise = Promise;
 
-var todoModel = require("./todo");
+const todoModel = require('./todo');
+
 module.exports = todoModel;
