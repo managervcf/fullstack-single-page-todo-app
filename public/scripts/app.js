@@ -26,13 +26,15 @@ function printError(err) {
 
 async function createTodo() {
   let userInput = $('#todoInput').val();
-  try {
-    let newTodo = $.post('/api/todos', {name: userInput});
-    $('#todoInput').val('');
-    appendTodo(await newTodo);
-  }
-  catch (err) {
-    printError(err);
+  if (userInput.length > 0) {
+    try {
+      let newTodo = $.post('/api/todos', {name: userInput});
+      $('#todoInput').val('');
+      appendTodo(await newTodo);
+    }
+    catch (err) {
+      printError(err);
+    }
   }
 }
 
@@ -50,7 +52,7 @@ function appendTodo(todo) {
 async function deleteTodo(event) {
   event.stopPropagation();
   let that = $(this).parent();
-  let deleteUrl = `/api/todos/hhh${that.data('id')}`;
+  let deleteUrl = `/api/todos/${that.data('id')}`;
   try {
     await $.ajax({ method: 'DELETE', url: deleteUrl });
     that.remove();
