@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
+const prodDatabaseURL = process.env.DATABASEURL;
+const devDatabaseURL = 'mongodb://127.0.0.1:27017/todo-api'
+const databaseURL = prodDatabaseURL || devDatabaseURL;
 
-const databaseURL = process.env.DATABASEURL;
-
-console.log(databaseURL);
-
-mongoose.connect(databaseURL, {useNewUrlParser: true});
+mongoose.connect(databaseURL, { useNewUrlParser: true });
 mongoose.set('debug', true);
 mongoose.Promise = Promise;
 
