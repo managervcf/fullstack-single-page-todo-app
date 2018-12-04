@@ -36,7 +36,7 @@ class TodoList extends Component {
 		this.setState({ [event.target.name]: event.target.value });
 	}
 
-	toggleTodo(id, isCompleted) {
+	async toggleTodo(id, isCompleted) {
 		this.props.updateTodo(id, isCompleted);
 	}
 
