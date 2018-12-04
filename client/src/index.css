@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700'); 
+ 
+body {
+  font-family: monospace;
+  background-color: white;
+  color: #24292e;
+  margin: 0;
+  user-select: none;
+}
+
+div {
+  margin: 0;
+}
+
+/***************************** HEADER STYLES *****************************/
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-size: 64px;
+  font-weight: 300;
+  margin: 40px 0;
+  color: #24292e;
+}
+
+header h1 span {
+  font-weight: 700;
+  transition: all .7s ease-out;
+}
+
+header h1 span:hover {
+  color: #c0392b;
+  letter-spacing: 1.05rem;
+}
+
+h2 {
+  font-family: monospace;
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: #bdc3c7;
+  font-weight: 300;
+}
+
+header h2 span {
+  display: inline-block;
+  transition: all 1s ease-out .1s;
+}
+
+header h2:hover span {
+  transition: all 1s ease-out .1s;
+  transform: translateY(-2px);
+  color: #e74c3c;
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+/***************************** FORM STYLES *****************************/
+
+.form {
+  width: 95%;
+  max-width: 450px;
+  margin: 20px auto 20px;
+}
+
+#todoInput {
+  font: inherit;
+  margin: 0 auto;
+  width: 100%;
+  height: 60px;
+  background-color: none;
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1.3em;
+  color: #bdc3c7;
+  font-weight: 300;
+  transition: all .3s ease-out;
+}
+
+#todoInput:focus::placeholder {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all .5s ease-out;
+}
+
+#todoInput:focus {
+  transform: translateY(5px);
+  /*transform: translateX(-20px);*/
+  color: #c0392b;
+  outline: none;
+}
+
+/***************************** LIST STYLES *****************************/
+
+.list {
+  width: 80%;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: circle;
+}
+
+.task {
+  width: 100%;
+  line-height: 40px;
+  font-size: 20px;
+  padding-left: 1%;
+  color: #24292e;
+  cursor: pointer;
+  transition: transform .3s ease-out .05s;
+}
+
+.task:hover {
+  color: #c0392b;
+  list-style-type: disc;
+  transform: translateX(1%);
+}
+
+.task:hover i {
+  opacity: 1;
+}
+
+.done {
+  opacity: 0.7;
+  text-decoration: line-through #c0392b;
+  color: #bdc3c7;
+}
+
+li span {
+  transition: all 0.3s;
+}
+
+li i {
+  transform: translateX(-200%);
+  margin: 10px; 
+  position: relative;
+  float: right;
+  color: #c0392b;
+  transition: all .2s ease .3s;
+  opacity: 0;
+}
+
+li:hover i {
+  transition: all .7s ease .1s;
+  transform: translateX(0);
+}
