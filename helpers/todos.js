@@ -19,7 +19,6 @@ exports.getTodo = (req, res) => {
 };
 
 exports.updateTodo = (req, res) => {
-  debugger;
   Todo.findByIdAndUpdate(req.params.todoId, req.body, { new: true })
     .then(updatedTodo => res.json(updatedTodo))
     .catch(err => res.send(err));
