@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700'); 
- 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+
 body {
   font-family: monospace;
   background-color: white;
@@ -27,7 +27,7 @@ header h1 {
 
 header h1 span {
   font-weight: 700;
-  transition: all .7s ease-out;
+  transition: all 0.7s ease-out;
 }
 
 header h1 span:hover {
@@ -47,11 +47,11 @@ h2 {
 
 header h2 span {
   display: inline-block;
-  transition: all 1s ease-out .1s;
+  transition: all 1s ease-out 0.1s;
 }
 
 header h2:hover span {
-  transition: all 1s ease-out .1s;
+  transition: all 1s ease-out 0.1s;
   transform: translateY(-2px);
   color: #e74c3c;
 }
@@ -85,13 +85,13 @@ footer a {
   font-size: 1.3em;
   color: #bdc3c7;
   font-weight: 300;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 #todoInput:focus::placeholder {
   transform: translateY(-20px);
   opacity: 0;
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 #todoInput:focus {
@@ -118,7 +118,7 @@ footer a {
   padding-left: 1%;
   color: #24292e;
   cursor: pointer;
-  transition: transform .3s ease-out .05s;
+  transition: transform 0.3s ease-out 0.05s;
 }
 
 .task:hover {
@@ -143,15 +143,15 @@ li span {
 
 li i {
   transform: translateX(-200%);
-  margin: 10px; 
+  margin: 10px;
   position: relative;
   float: right;
   color: #c0392b;
-  transition: all .2s ease .3s;
+  transition: all 0.2s ease 0.3s;
   opacity: 0;
 }
 
 li:hover i {
-  transition: all .7s ease .1s;
+  transition: all 0.7s ease 0.1s;
   transform: translateX(0);
 }

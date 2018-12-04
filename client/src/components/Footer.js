@@ -2,13 +2,14 @@ import React from 'react';
 
 const Footer = () => (
 	<footer>
-		<p>by <a
-				href='https://github.com/managervcf'
-				target='_blank'
-				rel='noopener noreferrer'>
-				Mateusz Pyzowski
-			</a>
-		</p>
+		<p>by Mateusz Pyzowski</p>
+		<a
+			href="https://github.com/managervcf"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<i class="fab fa-github" />
+		</a>
 	</footer>
 );
 
