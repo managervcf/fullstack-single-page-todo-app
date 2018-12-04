@@ -11,10 +11,6 @@ app.use(cors());
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) =>
-	res.sendFile('index.html')
-);
-
 app.use('/api/todos', todoRoutes);
 
 app.listen(port, () =>
