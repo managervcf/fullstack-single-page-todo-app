@@ -6,7 +6,7 @@ This project was built with React and Redux calling RESTful API created with Nod
 
 In development mode app uses local MongoDB database. To integrate your own database, create `dev.js` file inside `/config` directory and export an object including `databaseURL: <your database url>`.
 
-To boot the app, run script `npm run dev` which the app in the development mode.
+To boot the app in the development mode, run script `npm run dev`.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Production
