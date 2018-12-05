@@ -155,3 +155,16 @@ li:hover i {
   transition: all 0.7s ease 0.1s;
   transform: translateX(0);
 }
+
+footer a:visited {
+  color: inherit;
+}
+
+footer a i {
+  transition: all .3s ease-out;
+}
+
+footer a:hover i {
+  transform: rotateZ(360deg);
+  color: #c0392b;
+}
