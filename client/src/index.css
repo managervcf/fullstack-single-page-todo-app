@@ -161,10 +161,10 @@ footer a:visited {
 }
 
 footer a i {
-  transition: all .3s ease-out;
+  transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 footer a:hover i {
-  transform: rotateZ(360deg);
+  transform: rotateZ(360deg) scale(1.5);
   color: #c0392b;
 }
