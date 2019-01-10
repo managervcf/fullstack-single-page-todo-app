@@ -20,6 +20,7 @@
     "body-parser": "^1.18.3",
     "concurrently": "^4.1.0",
     "express": "^4.16.3",
-    "mongoose": "^5.3.10"
+    "mongoose": "^5.4.3",
+    "single-page-todo-list-frontend": "file:client"
   }
 }
