@@ -5,70 +5,65 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 class TodoList extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			inputText: '',
-			loading: true
-		};
-		this.addTodo = this.addTodo.bind(this);
-		this.handleChange = this.handleChange.bind(this);
-		this.deleteTodo = this.deleteTodo.bind(this);
-		this.toggleTodo = this.toggleTodo.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputText: '',
+      loading: true
+    };
+    this.addTodo = this.addTodo.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.deleteTodo = this.deleteTodo.bind(this);
+    this.toggleTodo = this.toggleTodo.bind(this);
+  }
 
-	async componentWillMount() {
-		await this.props.getTodos();
-		this.setState({ loading: false });
-	}
+  async componentWillMount() {
+    await this.props.getTodos();
+    this.setState({ loading: false });
+  }
 
-	async addTodo(event) {
-		event.preventDefault();
-		await this.props.addTodo(this.state.inputText);
-		this.setState({ inputText: '' });
-	}
+  async addTodo(event) {
+    event.preventDefault();
+    await this.props.addTodo(this.state.inputText);
+    this.setState({ inputText: '' });
+  }
 
-	deleteTodo(id) {
-		this.props.removeTodo(id);
-	}
+  deleteTodo(id) {
+    this.props.removeTodo(id);
+  }
 
-	handleChange(event) {
-		this.setState({ [event.target.name]: event.target.value });
-	}
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
 
-	async toggleTodo(id, isCompleted) {
-		this.props.updateTodo(id, isCompleted);
-	}
+  async toggleTodo(id, isCompleted) {
+    this.props.updateTodo(id, isCompleted);
+  }
 
-	render() {
-		const todos = this.props.todos.map(todo => (
-			<TodoItem
-				{...todo}
-				key={todo._id}
-				deleteTodo={this.deleteTodo}
-				toggleTodo={this.toggleTodo}
-			/>
-		));
-		return (
-			<main>
-				<TodoForm
-					inputText={this.state.inputText}
-					addTodo={this.addTodo}
-					handleChange={this.handleChange}
-				/>
-				<ul className="list">
-					{this.state.loading ? <h2>fetching data from API...</h2> : todos}
-				</ul>
-			</main>
-		);
-	}
+  render() {
+    const todos = this.props.todos.map(todo => (
+      <TodoItem
+        {...todo}
+        key={todo._id}
+        deleteTodo={this.deleteTodo}
+        toggleTodo={this.toggleTodo}
+      />
+    ));
+    return (
+      <main>
+        <TodoForm
+          inputText={this.state.inputText}
+          addTodo={this.addTodo}
+          handleChange={this.handleChange}
+        />
+        <ul className="list">
+          {this.state.loading ? <h2>fetching data from API...</h2> : todos}
+        </ul>
+      </main>
+    );
+  }
 }
 
-function mapStateToProps(reduxState) {
-	return { ...reduxState };
-}
+const mapStateToProps = reduxState => ({ ...reduxState });
 
-export default connect(
-	mapStateToProps,
-	actions
-)(TodoList);
+export default connect(mapStateToProps, actions)(TodoList);
