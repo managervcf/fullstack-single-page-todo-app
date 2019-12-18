@@ -2,6 +2,7 @@
   "name": "todo-app",
   "version": "1.0.0",
   "description": "Simple todo app built with React and Redux calling RESTful API created with Node, Express and MongoDB.",
+  "homepage": "https://fullstack-single-page-todo-app.herokuapp.com/",
   "main": "index.js",
   "engines": {
     "node": "11.3.0",
