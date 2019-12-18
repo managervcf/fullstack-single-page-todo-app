@@ -13,17 +13,15 @@
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run build --prefix client"
   },
   "author": "Mateusz Pyzowski",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
     "express": "^4.17.1",
-    "mongoose": "^5.8.1",
-    "single-page-todo-list-frontend": "file:client"
+    "mongoose": "^5.8.1"
   },
-  "devDependencies": {
-    "concurrently": "^5.0.2"
-  }
+  "devDependencies": {}
 }
